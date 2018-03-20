@@ -669,22 +669,6 @@ wahooo!!!!!!! It worked!!!
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
-.clock-day:before {
-    content: var(--timer-day);
-}
-
-.clock-hours:before {
-    content: var(--timer-hours);
-}
-
-.clock-minutes:before {
-    content: var(--timer-minutes);
-}
-
-.clock-seconds:before {
-    content: var(--timer-seconds);
-}
-
 .clock-container {
     font-family: 'Montserrat', 'sans-serif';
     margin-top: 20px;
@@ -756,9 +740,6 @@ wahooo!!!!!!! It worked!!!
     }
 }
 
-.footer5 .general-listing li:hover a {
-    color: #
-}
 .footer5 .form-control {
     background: #fff;
 }
@@ -1424,20 +1405,20 @@ Responsive
 #gear-1 .gear-svg .gear-animation {
     -webkit-animation-name: Animation-rotate-clockwise-gear;
     animation-name: Animation-rotate-clockwise-gear;
-    -webkit-transform-origin: undefined;
-    transform-origin: undefined
+    -webkit-transform-origin: center;
+    transform-origin: center;
 }
 #gear-2 .gear-svg .gear-animation {
     -webkit-animation-name: Animation-rotate-clockwise-gear;
     animation-name: Animation-rotate-clockwise-gear;
-    -webkit-transform-origin: undefined;
-    transform-origin: undefined
+    -webkit-transform-origin: center;
+    transform-origin: center;
 }
 #gear-3 .gear-svg .gear-animation {
     -webkit-animation-name: Animation-rotate-counterclockwise-gear;
     animation-name: Animation-rotate-counterclockwise-gear;
-    -webkit-transform-origin: undefined;
-    transform-origin: undefined
+    -webkit-transform-origin: center;
+    transform-origin: center;
 }
 .gear-svg * {
     -webkit-animation-duration: 25s;
