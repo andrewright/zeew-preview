@@ -1,0 +1,75 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <!-- Blog  -->
+        <div class="mini-spacer">
+
+            <h2 class="title font-light">Terms & Conditions</h2>
+
+            <p class="m-t-30 m-b-30">SCHEDULE A
+                Warranty given by user(s) especially in relation to the United States ALL PARTICIPANTS AND USERS HEREBY EXPRESSLY AFFIRM THAT THEY ARE:</p>
+            <ol>
+                <li>NOT an individual who is a resident of the United States of America, its territories or possessions, any state of the United States of America or the District of Columbia (the &ldquo;USA&rdquo;);</li>
+                <li>NOT a corporation, partnership or other legal entity formed under the laws of the USA;</li>
+                <li>NOT an agency, branch or office located in the USA of a corporation, partnership or other legal entity that was formed under laws other than those of the USA;</li>
+                <li>NOT a trust of which any trustee is described in A, B or C above;</li>
+                <li>NOT a legal entity the shares of which are not publicly traded on a securities exchange, and more than 45% of the shares of which are owned by or for the benefit of an individual or entity described in A, B, C or D above;</li>
+                <li>NOT a member of any branch of the military of the USA;</li>
+                <li>NOT an agent or a fiduciary acting on behalf or for the benefit of an individual or entity described in A, B, C, D, E or F above.</li>
+            </ol>
+
+
+            <p class="m-t-30 m-b-30">THE USER(S)&rsquo; DECISION TO SUBSCRIBE TO ZEEW TOKENS WAS:</p>
+
+            <ol>
+                <li>NOT based, at least in part, on information received or communications exchanged while the user, or the person providing the information or with whom the communication was exchanged, was within the USA;</li>
+                <li>NOT made inside the USA;</li>
+                <li>NOT communicated to&nbsp;<strong>ZEEW</strong>&nbsp;from a source within the USA.</li>
+            </ol>
+
+            <p class="m-t-30 m-b-30">THE USER(S)&rsquo; PURCHASE OF ZEEW TOKENS WAS:</p>
+
+            <ol>
+                <li>Made on his/her own account as principal;</li>
+                <li>NOT made in anticipation of a further distribution of the ZEEW Tokens to others;</li>
+                <li>NOT preceded, and will not be followed within 2 days from the Closing Time, by any effort to create or condition a market for the ZEEW Tokens in the USA.</li>
+            </ol>
+
+            <label class="custom-control custom-checkbox m-t-30 m-b-30">
+                <input type="checkbox" class="custom-control-input terms" onclick="toggleTermsCookie()">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">I, as the User, have read and understood the above representations as well as the full <br> Terms & Conditions of this Agreement.</span>
+            </label>
+
+
+            <a class="btn btn-outline-zeew btn-md" href="http://ico.zeew.eu/wallet/wp-content/uploads/2018/02/ZEEW_terms_and_conditions.pdf" data-aos="flip-down" target="_blank">Full Terms & Conditions Document</a>
+
+
+        </div>
+        <!-- Blog  -->
+    </div>
+</div>
+<script>
+
+    (function () {
+        setTimeout(function () {
+            if($.cookie('terms') == 1) {
+                $('.terms').prop('checked', true);
+            }
+        }, 800)
+    })();
+
+
+
+    var toggleTermsCookie = function () {
+        if($.cookie('terms') == 1) {
+            $.cookie('terms', 0);
+            console.log($.cookie('terms'));
+        } else {
+            $.cookie('terms', 1);
+            console.log($.cookie('terms'));
+        }
+    };
+
+
+</script>
