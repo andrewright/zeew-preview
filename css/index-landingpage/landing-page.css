@@ -642,22 +642,6 @@ wahooo!!!!!!! It worked!!!
         font-size: 25px;
     }
 
-    h2 {
-        font-size: 12px;
-        top: 50px;
-    }
-
-    audio {
-        opacity: 1;
-        bottom: 30px;
-        top: 90px;
-        left: 10px;
-    }
-
-    #crushin {
-        display: none;
-    }
-
     #counter {
         top: 380px;
     }
@@ -1091,6 +1075,10 @@ Responsive
     text-align: right;
     bottom: 50px;
 }
+.table-responsive {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
 
 .table-responsive td {
     vertical-align: middle;
@@ -1486,18 +1474,89 @@ Responsive
 }
 .gears-section {
     width: 100%;
+    min-width: 420px;
     position: relative;
 }
 .gears-section .gear-element {
     position: relative;
 }
-.gears-section p{
+.gears-section .gear-text h4 {
+    font-size: 18px;
+    line-height: 18px;
+}
+.gears-section .gear-text h6 {
+    font-size: 14px;
+    line-height: 14px;
+}
+.gears-section .gear-text p {
     font-size: 12px;
+    margin-bottom: 0;
+}
+@media (max-width: 1200px) {
+    .gears-section .gear-text h4 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .gears-section .gear-text h6 {
+        font-size: 13px;
+        line-height: 13px;
+    }
+    .gears-section .gear-text p {
+        font-size: 11px;
+    }
+}
+@media (max-width: 768px) {
+    .gears-section .gear-text h4 {
+        font-size: 13px;
+        line-height: 13px;
+        margin-bottom: 0px;
+    }
+    .gears-section .gear-text h6 {
+        font-size: 9px;
+        line-height: 9px;
+        margin-bottom: 1px;
+    }
+    .gears-section .gear-text p {
+        font-size: 10px;
+        line-height: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .gears-section .gear-text h4 {
+        font-size: 13px;
+        line-height: 13px;
+        margin-bottom: 0px;
+    }
+    .gears-section .gear-text h6 {
+        font-size: 9px;
+        line-height: 9px;
+        margin-bottom: 1px;
+    }
+    .gears-section .gear-text p {
+        font-size: 10px;
+        line-height: 10px;
+    }
+}
+@media (max-width: 576px) {
+    .gears-section .gear-text h4 {
+        font-size: 10px;
+        line-height: 10px;
+        margin-bottom: 0px;
+    }
+    .gears-section .gear-text h6 {
+        font-size: 9px;
+        line-height: 9px;
+        margin-bottom: 0px;
+    }
+    .gears-section .gear-text p {
+        font-size: 8px;
+        line-height: 8px;
+    }
 }
 .gears-section .gear-text {
     width: 70%;
     height: 70%;
-    padding: 0 5%;
+    padding: 0 6%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
