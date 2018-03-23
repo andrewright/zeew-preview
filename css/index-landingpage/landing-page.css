@@ -161,11 +161,12 @@ Static slide 3
 /*******************
 form-banner 1
 *******************/
-.banner1 {
+.subscribe .banner1 {
     background-repeat: no-repeat;
     background-attachment: fixed !important;
     background-size: cover !important;
-    background-position: center !important;
+    background-position: center -300px !important;
+    background-image:url('../../images/22.jpg');
 }
 
 .banner1 h2 {
@@ -1572,4 +1573,93 @@ Responsive
 }
 .token-rounds .table-round-counter {
     min-width: 200px;
+}
+body.not-leave .container-fluid{
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+body.not-leave {
+    transition: all 0.15s ease-out;
+}
+
+body.not-leave .preloader {
+    /*background: rgba(255, 255, 255, 0.8);*/
+    background: rgba(0, 0, 0, 0.8);
+    display: block!important;
+}
+
+body.not-leave .subscribe h2.title{
+    color: #fff;
+}
+body.not-leave .subscribe {
+    position: fixed;
+    top: calc(50% - 183px);
+    left: 22%;
+    right: 22%;
+    z-index: 9999999;
+    min-width: 250px;
+    text-align: center;
+    border: 4px solid #fff;
+    background: url('http://www.onlygfx.com/wp-content/uploads/2016/08/halftone-simple.png');
+    background-size: cover;
+    background-position: bottom;
+}
+body.not-leave .preloader .loader {
+    display: none;
+}
+body.not-leave .subscribe .close-button {
+    opacity: 1;
+    transform: scale(1);
+    transition: all .15s ease-out;
+}
+body.not-leave .subscribe .banner1 .color-overlay{
+    background: rgba(234, 154, 3, 0.9)
+}
+body.not-leave .subscribe .banner1 {
+    background: none;
+}
+.subscribe .subscribe-form {
+    min-width: 410px;
+}
+.subscribe .close-button{
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+    right: 25px;
+    top: 25px;
+
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    z-index: 1;
+    cursor: pointer;
+
+    opacity: 0;
+}
+
+.instant-payment .close-button{
+    color: #232a37;
+}
+.instant-payment {
+    position: fixed;
+    bottom: 50px;
+    left: 10px;
+    z-index: 31;
+    overflow: hidden;
+
+    background: white;
+    border-radius: 6px;
+    box-shadow: -2px 4px 14px 0 rgba(0, 0, 0, 0.2);
+}
+.instant-payment .style {
+    padding: 10px 20px 4px 20px;
+    border-bottom: 3px solid #4bb20f;
+}
+.instant-payment .style p.time-ago{
+    color: #c1c5ce;
+}
+.instant-payment .style p {
+    margin-bottom: 6px;
+    font-size: 11px;
 }
