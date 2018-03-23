@@ -1,4 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <div class="row justify-content-center">
     <div class="col-md-8">
         <!-- Blog  -->
@@ -51,23 +50,24 @@
 </div>
 <script>
 
+    var ls = window.localStorage;
+    var lsTermsSet = function (arg) {
+        ls.setItem('terms', arg.toString());
+    };
+
     (function () {
-        setTimeout(function () {
-            if($.cookie('terms') == 1) {
+            if(ls.getItem('terms') == '1') {
                 $('.terms').prop('checked', true);
             }
-        }, 800)
     })();
 
-
-
     var toggleTermsCookie = function () {
-        if($.cookie('terms') == 1) {
-            $.cookie('terms', 0);
-            console.log($.cookie('terms'));
+        if(ls.getItem('terms') == '0' || !ls.getItem('terms')) {
+            lsTermsSet('1');
+            console.log('set 1 = ' + ls.getItem('terms'));
         } else {
-            $.cookie('terms', 1);
-            console.log($.cookie('terms'));
+            lsTermsSet('0');
+            console.log('set 0 = ' + lsTermsStatus);
         }
     };
 
