@@ -49,16 +49,15 @@
     </div>
 </div>
 <script>
-
     var ls = window.localStorage;
     var lsTermsSet = function (arg) {
         ls.setItem('terms', arg.toString());
     };
 
     (function () {
-            if(ls.getItem('terms') == '1') {
-                $('.terms').prop('checked', true);
-            }
+        if(ls.getItem('terms') == '1') {
+            $('.terms').prop('checked', true);
+        }
     })();
 
     var toggleTermsCookie = function () {
@@ -70,6 +69,4 @@
             console.log('set 0 = ' + lsTermsStatus);
         }
     };
-
-
 </script>
