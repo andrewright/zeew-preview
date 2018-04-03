@@ -28,7 +28,7 @@ File: scss
 /*Normal Color*/
 /*Extra Variable*/
 /*Gradiant*/
-@import url(./animate.css);
+/*@import url(./animate.css);*/
 @import url(../scss/icons/font-awesome/css/font-awesome.min.css);
 @import url(../scss/icons/simple-line-icons/css/simple-line-icons.css);
 @import url(../scss/icons/themify-icons/themify-icons.css);
@@ -622,6 +622,9 @@ Text Colors
 .text-inverse {
   color: #3e4555 !important; }
 
+.text-telegram {
+  color: #5682a3 !important; }
+
 .text-zeew {
   color: #4bb20f !important; }
 
@@ -709,6 +712,9 @@ Background Colors
 
 .bg-linkedin {
   background-color: #0077b5; }
+
+.bg-telegram {
+  background-color: #5682a3; }
 
 .bg-twitter {
   background-color: #56adf2; }
