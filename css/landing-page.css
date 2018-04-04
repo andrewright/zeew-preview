@@ -842,10 +842,6 @@ team 4
     filter: grayscale(0%);
 }
 
-.team4 .m-b-30:hover .title {
-    margin: 10px 0 20px 0;
-}
-
 .team4 .pro-pic img {
     border-radius: 100%;
     -webkit-filter: grayscale(40%); /* Safari 6.0 - 9.0 */
@@ -864,11 +860,7 @@ team 4
     -o-transition: 0.1s ease-in;
     transition: 0.1s ease-in;
     display: block;
-}
-
-.team4 ul li a:hover {
-    -webkit-transform: translate3d(0px, -5px, 0px);
-    transform: translate3d(0px, -5px, 0px);
+    font-size: 18px;
 }
 
 .team4 .title {
@@ -878,6 +870,11 @@ team 4
 .team4 .subtitle {
     margin: 0 0 20px 0;
     font-size: 13px;
+}
+.team4 .team-about {
+    min-height: 120px;
+    text-align: justify;
+    padding: 0 10%;
 }
 
 /*******************

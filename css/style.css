@@ -29,10 +29,10 @@ File: scss
 /*Extra Variable*/
 /*Gradiant*/
 /*@import url(./animate.css);*/
-@import url(../scss/icons/font-awesome/css/font-awesome.min.css);
-@import url(../scss/icons/simple-line-icons/css/simple-line-icons.css);
-@import url(../scss/icons/themify-icons/themify-icons.css);
-@import url(../scss/icons/iconmind/iconmind.css);
+@import url(icons/fontawesome/css/fontawesome-all.min.css);
+@import url(icons/simple-line-icons/css/simple-line-icons.css);
+@import url(icons/themify-icons/themify-icons.css);
+@import url(icons/iconmind/iconmind.css);
 /*
 Template Name: Wrakit UI Kit
 Author: wrappixel
