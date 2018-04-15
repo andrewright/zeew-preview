@@ -1250,23 +1250,24 @@ Buttons
 
 .btn-zeew-gradiant{
   background: #4bb20f;
-  background: -webkit-linear-gradient(legacy-direction(to right), #4bb20f 0%, #92ec2f 100%);
-  background: -webkit-gradient(linear, left top, right top, from(#4bb20f), to(#92ec2f));
-  background: -webkit-linear-gradient(left, #4bb20f 0%, #92ec2f 100%);
-  background: -o-linear-gradient(left, #4bb20f 0%, #92ec2f 100%);
-  background: linear-gradient(to right, #4bb20f 0%, #92ec2f 100%);
-  border: 0px; }
+  background: -webkit-linear-gradient(legacy-direction(to right), #4bb20f 0%, #92ec2f 50%, #4bb20f 100%);
+  background: -webkit-linear-gradient(left, #4bb20f 0%, #92ec2f 50%, #4bb20f 100%);
+  background: -o-linear-gradient(left, #4bb20f 0%, #92ec2f 50%, #4bb20f 100%);
+  background: linear-gradient(to right, #4bb20f 0%, #92ec2f 50%, #4bb20f 100%);
+  border: 0;
+  background-size: 200%;
+  background-position: 0 0;
+  transition: all .131s ease-in-out;}
 .btn-zeew-gradiant:hover {
-  background: #92ec2f;
-  background: -webkit-linear-gradient(legacy-direction(to right), #92ec2f 0%, #4bb20f 100%);
-  background: -webkit-gradient(linear, left top, right top, from(#92ec2f), to(#4bb20f));
-  background: -webkit-linear-gradient(left, #92ec2f 0%, #4bb20f 100%);
-  background: -o-linear-gradient(left, #92ec2f 0%, #4bb20f 100%);
-  background: linear-gradient(to right, #92ec2f 0%, #4bb20f 100%); }
+  background-position: 100% 0;}
 .btn-zeew-gradiant.active, .btn-zeew-gradiantt:active, .btn-zeew-gradiant:focus {
   -webkit-box-shadow: 0px;
   box-shadow: 0px;
   opacity: 1; }
+.btn-zeew-gradiant:not(:disabled):not(.disabled).active,
+.btn-zeew-gradiant:not(:disabled):not(.disabled):active {
+  background: #4bb20f;
+}
 
 .btn-success-gradiant {
   background: #2cdd9b;

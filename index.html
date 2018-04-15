@@ -74,14 +74,19 @@
                                 <img src="images/zeew-green-websites-logo.svg" style="height:74px;"/>
                             </a>
                             <div class="btn-group languages">
-                                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="images/flags/Flag_of_the_United_Kingdom.svg" width="30px" /> UK
+                                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    <img src="images/flags/Flag_of_the_United_Kingdom.svg" width="30px"/> UK
                                 </a>
                                 <div class="dropdown-menu bg-light">
-                                    <a class="dropdown-item" href="#"><img src="images/flags/Flag_of_the_United_Kingdom.svg" width="30px" /> UK</a>
-                                    <a class="dropdown-item" href="#"><img src="images/flags/Flag_of_Russia.svg" width="30px" /> Russia</a>
-                                    <a class="dropdown-item" href="#"><img src="images/flags/Flag_of_South_Korea.svg" width="30px" /> Korea</a>
-                                    <a class="dropdown-item" href="#"><img src="images/flags/Flag_of_Vietnam.svg" width="30px" /> Vietnam</a>
+                                    <a class="dropdown-item" href="#"><img
+                                            src="images/flags/Flag_of_the_United_Kingdom.svg" width="30px"/> UK</a>
+                                    <a class="dropdown-item" href="#"><img src="images/flags/Flag_of_Russia.svg"
+                                                                           width="30px"/> Russia</a>
+                                    <a class="dropdown-item" href="#"><img src="images/flags/Flag_of_South_Korea.svg"
+                                                                           width="30px"/> Korea</a>
+                                    <a class="dropdown-item" href="#"><img src="images/flags/Flag_of_Vietnam.svg"
+                                                                           width="30px"/> Vietnam</a>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +111,8 @@
                                 <li class="nav-item"><a class="nav-link" href="#Investors">Investors</a></li>
                                 <li class="nav-item"><a class="nav-link" href="/page.html?id=faq">FAQ</a></li>
                                 <li class="nav-item"><a class="btn btn-outline-info" href="http://t.me/zeewgroup"
-                                                        target="_blank"><i class="fab fa-telegram"></i> Telegram</a></li>
+                                                        target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+                                </li>
                                 <li class="nav-item"><a class="btn btn-outline-zeew" href="/wallet"><i
                                         class="fas fa-lock"></i> Zeew Wallet</a></li>
                             </ul>
@@ -157,9 +163,8 @@
                                         </div>
                                         <input type="submit" value="Subscribe" name="subscribe"
                                                id="mc-embedded-subscribe"
-                                               class="btn-secondary font-semibold font-16 btn-rounded text-uppercase text-center" />
+                                               class="btn-secondary font-semibold font-16 btn-rounded text-uppercase text-center"/>
                                     </form>
-                                    <h6 class="m-t-10">1600+ whitelist members</h6>
                                 </div>
                             </div>
 
@@ -762,7 +767,9 @@
 
                     <div class="row problem-points">
                         <div class="col-md-12 text-center m-b-40">
-                            <a class="btn btn-outline-zeew btn-md btn-arrow m-t-20" href="https://ico.zeew.eu/ZeewWhitepaper-V2-D4.pdf" target="_blank"><span>Learn more <i class="ti-arrow-right"></i></span></a>
+                            <a class="btn btn-outline-zeew btn-md btn-arrow m-t-20"
+                               href="https://ico.zeew.eu/ZeewWhitepaper-V2-D4.pdf" target="_blank"><span>Learn more <i
+                                    class="ti-arrow-right"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -3971,7 +3978,6 @@
                                                id="mc-embedded-subscribe"
                                                class="btn-secondary font-semibold font-16 btn-rounded text-uppercase text-center"/>
                                     </form>
-                                    <h6 class="m-t-10 text-white text-center">1600+ whitelist members</h6>
                                 </div>
                             </div>
                         </div>
@@ -4026,18 +4032,46 @@
     gtag('config', 'UA-100481535-1');
 </script>
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/59b0a6ac4854b82732fee980/default';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    })();
+<script>
+    window.intercomSettings = {
+        app_id: "u7z1d9tw"
+    };
+</script>
+<script>(function () {
+    var w = window;
+    var ic = w.Intercom;
+    if (typeof ic === "function") {
+        ic('reattach_activator');
+        ic('update', intercomSettings);
+    } else {
+        var d = document;
+        var i = function () {
+            i.c(arguments)
+        };
+        i.q = [];
+        i.c = function (args) {
+            i.q.push(args)
+        };
+        w.Intercom = i;
 
+        function l() {
+            var s = d.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://widget.intercom.io/widget/u7z1d9tw';
+            var x = d.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        }
+
+        if (w.attachEvent) {
+            w.attachEvent('onload', l);
+        } else {
+            w.addEventListener('load', l, false);
+        }
+    }
+})()</script>
+
+<script type="text/javascript">
     $.ajax({
         url: 'component-footer.html',
         context: document.body,
@@ -4047,7 +4081,6 @@
         crossDomain: true
     });
 </script>
-<!--End of Tawk.to Script-->
 
 </body>
 

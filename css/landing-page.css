@@ -788,7 +788,7 @@ team 4
 }
 .team4 .team-about {
     min-height: 120px;
-    text-align: justify;
+    text-align: center;
     padding: 0 10%;
 }
 
