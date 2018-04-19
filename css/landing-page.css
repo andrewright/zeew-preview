@@ -82,7 +82,7 @@ form-banner 1
 .subscribe .banner1 {
     background-repeat: no-repeat;
     background-attachment: fixed !important;
-    background-size: cover !important;
+    background-size: auto;
     background-position: center -300px !important;
     background-image: url('../../images/22.jpg');
 }
