@@ -443,37 +443,34 @@ $(function () {
         if (response.status == 'ok') {
             var output = '';
             $.each(response.items, function (k, item) {
-                var visibleSm;
-                if(k < 3){
-                    visibleSm = '';
-                } else {
-                    visibleSm = ' visible-sm';
-                }
-
                 console.log(item);
 
-                output += '<div class="col-md-4 ' + visibleSm +'">';
-                output += '<div class="card b-h-box font-14" data-aos="flip-left">';
                 var tagIndex = item.description.indexOf('<img'); // Find where the img tag starts
                 var srcIndex = item.description.substring(tagIndex).indexOf('src=') + tagIndex; // Find where the src attribute starts
                 var srcStart = srcIndex + 5; // Find where the actual image URL starts; 5 for the length of 'src="'
                 var srcEnd = item.description.substring(srcStart).indexOf('"') + srcStart; // Find where the URL ends
                 var src = item.description.substring(srcStart, srcEnd); // Extract just the URL
+
+                var maxLengthTitle = 50; // maximum number of characters to extract
+                var trimmedStringTitle = item.description.substr(0, maxLengthTitle);
+
                 var maxLengthDescr = 80; // maximum number of characters to extract
 
                 var yourStringDescr = item.description.replace(/(<([^>]+)>)/ig,"");
                 var trimmedStringDescr = yourStringDescr.substr(0, maxLengthDescr);
 
-                output += '<img class="card-img" src="' + item.thumbnail + '" alt="' + item.title + '">';
+                output += '<div class="col-md-4">';
+                output += '<div class="card b-h-box font-14" data-aos="flip-left" style="background-image: url(' + src +')">';
+
+                /*output += '<img class="card-img" src="' + src + '" alt="' + item.title + '">';*/
                 output += '<div class="card-img-overlay">';
                 output += '<span class="bg-zeew-gradiant label">' + item.author + '</span> <span class="m-l-10">' + $.format.date(item.pubDate, 'MMM d yyyy') + '</span>';
-                output += '<h5 class="card-title">' + item.title + '</h5>';
+                output += '<h5 class="card-title">' + trimmedStringTitle + '...</h5>';
                 output += '<p class="card-text">' + trimmedStringDescr + '...</p>';
                 output += '<a class="linking font-medium" href="'+ item.link + '" target="_blank">Readmore <i class="ti-arrow-right text-zeew"></i></a>';
                 output += '</div>';
                 output += '</div>';
                 output += '</div>';
-                return k < 3;
             });
             $content.html(output);
         }

@@ -696,7 +696,12 @@ Blog homepage 5
 .blog-home5 .b-h-box {
     position: relative;
     color: #ffffff;
-    background: black;
+    height: 261px;
+    background-image: url("../images/b2b2c-bg.png");
+    background-color: rgba(0, 0, 0, 0.2);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
 }
 
 .blog-home5 .b-h-box .card-img {
@@ -726,18 +731,18 @@ Blog homepage 5
     color: #8d97ad;
 }
 
-.blog-home5 .b-h-box:hover .card-img-overlay {
+.blog-home5 .b-h-box .card-img-overlay {
     height: 100%;
     background: #ffffff;
     border: 3px solid rgba(120, 130, 140, 0.13);
 }
 
-.blog-home5 .b-h-box:hover .card-title {
+.blog-home5 .b-h-box .card-title {
     color: #263238;
     margin: 15px 0;
 }
 
-.blog-home5 .b-h-box:hover .card-text, .blog-home5 .b-h-box:hover .linking {
+.blog-home5 .b-h-box .card-text, .blog-home5 .b-h-box .linking {
     display: block;
 }
 
