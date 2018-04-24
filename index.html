@@ -4169,7 +4169,7 @@
     <!-- ============================================================== -->
     <!-- End Wrapper -->
 </div>
-<link rel="stylesheet" media="none" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<link rel="stylesheet" media="none" onload="if(media!='all')media='all'" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" async></script>
 <script async>
     window.addEventListener("load", function(){
@@ -4219,7 +4219,7 @@
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113992084-1"></script>
-<script>
+<script async>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
