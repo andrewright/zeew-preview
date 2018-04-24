@@ -1268,6 +1268,29 @@ Responsive
     box-shadow: inset 0px -30px 14px 0px #0000000d, inset 0px 1px 9px 0px #00000066;
 }
 
+.sellingStart .countdown-clock.header-timer {
+    color: #fff;
+    background: #4bb20f;
+    background: -webkit-linear-gradient(legacy-direction(15deg), #4bb20f 0%, #92ec2f 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#4bb20f), to(#92ec2f));
+    background: -webkit-linear-gradient(15deg, #4bb20f 0%, #92ec2f 100%);
+    background: -o-linear-gradient(15deg, #4bb20f 0%, #92ec2f 100%);
+    background: linear-gradient(15deg, #4bb20f 0%, #92ec2f 100%);
+}
+.sellingStart.progress .progress-bar-striped {
+    background-color: #ffffff;
+    background-image: linear-gradient(45deg,rgba(75, 178, 15, .15) 25%,transparent 25%,transparent 50%,rgba(75, 178, 15, .15) 50%,rgba(75, 178, 15, .15) 75%,transparent 75%,transparent);
+    line-height: 34px;
+    border-color: #4bb20f;
+    border-style: solid;
+    border-width: 4px;
+}
+.sellingStart .sellingStart-label {
+    position: relative;
+    bottom: -30px;
+    z-index: 5;
+}
+
 #countdown-clock-timeline.countdown-clock {
     margin-top: -20px;
 }

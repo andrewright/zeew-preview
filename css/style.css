@@ -717,6 +717,9 @@ Background Colors
 .bg-zeew {
   background-color: #4bb20f;}
 
+.bg-gray {
+  background-color: #8d97ad;}
+
 .bg-success-gradiant {
   background: #2cdd9b;
   background: -webkit-linear-gradient(legacy-direction(to right), #2cdd9b 0%, #1dc8cc 100%);
