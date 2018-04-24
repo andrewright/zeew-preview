@@ -53,9 +53,10 @@ $(function () {
         }
     });
 
-    var icoRoundOne = moment.tz("2018-04-25 10:00", "Europe/Riga");
+    var icoRoundOneStart = moment.tz("2018-04-25 10:00", "Europe/Riga");
+    var icoRoundOneEnd = moment.tz("2018-05-09 10:00", "Europe/Riga");
 
-    $('#countdown-clock-header-main').countdown(icoRoundOne.toDate(), function(event) {
+    $('#countdown-clock-header-main').countdown(icoRoundOneStart.toDate(), function(event) {
         $(this).html(event.strftime(
                 '<div class="clock-col"><p class="clock-day clock-timer">%-D</p><p class="clock-label">Day%!d</p></div>'
             +   '<div class="clock-col"><p class="clock-hours clock-timer">%H</p><p class="clock-label">Hours</p></div>'
@@ -64,7 +65,16 @@ $(function () {
         ));
     });
 
-    $('#countdown-clock-header').countdown(icoRoundOne.toDate(), function(event) {
+    $('#countdown-clock-header-main-2').countdown(icoRoundOneEnd.toDate(), function(event) {
+        $(this).html(event.strftime(
+            '<div class="clock-col"><p class="clock-day clock-timer">%-D</p><p class="clock-label">Day%!d</p></div>'
+            +   '<div class="clock-col"><p class="clock-hours clock-timer">%H</p><p class="clock-label">Hours</p></div>'
+            +   '<div class="clock-col"><p class="clock-minutes clock-timer">%M</p><p class="clock-label">Minutes</p></div>'
+            +   '<div class="clock-col"><p class="clock-seconds clock-timer">%S</p><p class="clock-label">Seconds</p></div>'
+        ));
+    });
+
+    $('#countdown-clock-header').countdown(icoRoundOneStart.toDate(), function(event) {
         $(this).html(event.strftime(
                 '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
             +   '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
@@ -73,7 +83,16 @@ $(function () {
         ));
     });
 
-    $('#countdown-clock-timeline').countdown(icoRoundOne.toDate(), function(event) {
+    $('#countdown-clock-header-2').countdown(icoRoundOneEnd.toDate(), function(event) {
+        $(this).html(event.strftime(
+            '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
+            +   '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
+            +   '<span class="data-countdown data-min" data-label="Min">%M</span>:'
+            +   '<span class="data-countdown data-sec" data-label="Sec">%S</span>'
+        ));
+    });
+
+    $('#countdown-clock-timeline').countdown(icoRoundOneStart.toDate(), function(event) {
         $(this).html(event.strftime(
                 '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
             +   '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
@@ -413,4 +432,50 @@ $(document).ready(function() {
     $('.close-button').on('click', function () {
         $('body').removeClass('not-leave');
     })
+});
+
+$(function () {
+    var $content = $('#newsContent');
+    var data = {
+        rss_url: 'https://medium.com/feed/@zeewapp'
+    };
+    $.get('https://api.rss2json.com/v1/api.json', data, function (response) {
+        if (response.status == 'ok') {
+            var output = '';
+            $.each(response.items, function (k, item) {
+                var visibleSm;
+                if(k < 3){
+                    visibleSm = '';
+                } else {
+                    visibleSm = ' visible-sm';
+                }
+
+                console.log(item);
+
+                output += '<div class="col-md-4 ' + visibleSm +'">';
+                output += '<div class="card b-h-box font-14" data-aos="flip-left">';
+                var tagIndex = item.description.indexOf('<img'); // Find where the img tag starts
+                var srcIndex = item.description.substring(tagIndex).indexOf('src=') + tagIndex; // Find where the src attribute starts
+                var srcStart = srcIndex + 5; // Find where the actual image URL starts; 5 for the length of 'src="'
+                var srcEnd = item.description.substring(srcStart).indexOf('"') + srcStart; // Find where the URL ends
+                var src = item.description.substring(srcStart, srcEnd); // Extract just the URL
+                var maxLengthDescr = 80; // maximum number of characters to extract
+
+                var yourStringDescr = item.description.replace(/(<([^>]+)>)/ig,"");
+                var trimmedStringDescr = yourStringDescr.substr(0, maxLengthDescr);
+
+                output += '<img class="card-img" src="' + item.thumbnail + '" alt="' + item.title + '">';
+                output += '<div class="card-img-overlay">';
+                output += '<span class="bg-zeew-gradiant label">' + item.author + '</span> <span class="m-l-10">' + $.format.date(item.pubDate, 'MMM d yyyy') + '</span>';
+                output += '<h5 class="card-title">' + item.title + '</h5>';
+                output += '<p class="card-text">' + trimmedStringDescr + '...</p>';
+                output += '<a class="linking font-medium" href="'+ item.link + '" target="_blank">Readmore <i class="ti-arrow-right text-zeew"></i></a>';
+                output += '</div>';
+                output += '</div>';
+                output += '</div>';
+                return k < 3;
+            });
+            $content.html(output);
+        }
+    });
 });

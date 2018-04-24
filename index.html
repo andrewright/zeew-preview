@@ -177,9 +177,9 @@
 
                             <div class="col-md-5 text-center">
                                 <h1>ICO Round 1</h1>
-                                <h4>Starts in</h4>
-                                <h5>(25th April)</h5>
-                                <div id="countdown-clock-header-main" class="clock-container"></div>
+                                <h4>Ends in</h4>
+                                <h5>(9th April)</h5>
+                                <div id="countdown-clock-header-main-2" class="clock-container"></div>
                             </div>
                             <!-- Column -->
 
@@ -215,6 +215,27 @@
                                                 <div class="progress progress-xs margin-vertical-10"
                                                      data-aos="fade-up">
                                                     <span id="countdown-clock-header"
+                                                          class="countdown-clock header-timer"
+                                                          data-aos="zoom-in"></span>
+                                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-zeew"
+                                                         style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Discount <br>37,5%</td>
+                                            <td class="text-nowrap">
+                                                Token price<br/>
+                                                $1.00
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Round 1 (14 days) <br> 2,500,000 ZEEW</td>
+                                            <td width="450" class="table-round-counter">
+                                                <div class="progress progress-xs margin-vertical-10"
+                                                     data-aos="fade-up">
+                                                    <span id="countdown-clock-header-2"
                                                           class="countdown-clock header-timer"
                                                           data-aos="zoom-in"></span>
                                                     <div class="progress-bar progress-bar-striped progress-bar-animated bg-zeew"
@@ -291,7 +312,7 @@
                         <!-- Column -->
                     </div>
                     <!-- Row  -->
-                    <div class="row m-t-40">
+                    <div class="row m-t-40" id="newsContent">
                         <!-- Column -->
                         <div class="col-md-4">
                             <div class="card b-h-box font-14" data-aos="flip-left">
@@ -308,45 +329,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Column -->
-                        <!-- Column -->
-                        <!--<div class="col-md-4">
-                            <div class="card b-h-box font-14" data-aos="flip-left">
-                                <img class="card-img"
-                                     src="https://wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img10.jpg"
-                                     alt="Card image">
-                                <div class="card-img-overlay">
-                                    <span class="bg-zeew-gradiant label">Charity, Ngo</span> <span
-                                        class="m-l-10">Feb 18, 2018</span>
-                                    <h5 class="card-title">Help out the people who really need it on time.</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        eiusmod...</p>
-                                    <a class="linking font-medium" href="single-news.html">Readmore
-                                        <i class="ti-arrow-right text-zeew"></i></a>
-
-                                </div>
-                            </div>
-                        </div>
-                        &lt;!&ndash; Column &ndash;&gt;
-                        &lt;!&ndash; Column &ndash;&gt;
-                        <div class="col-md-4">
-                            <div class="card b-h-box font-14" data-aos="flip-left">
-                                <img class="card-img"
-                                     src="https://wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img11.jpg"
-                                     alt="Card image">
-                                <div class="card-img-overlay">
-                                    <span class="bg-zeew-gradiant label">Charity, Ngo</span> <span
-                                        class="m-l-10">Feb 18, 2018</span>
-                                    <h5 class="card-title">Help out the people who really need it on time.</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        eiusmod...</p>
-                                    <a class="linking font-medium" href="single-news.html">Readmore
-                                        <i class="ti-arrow-right text-zeew"></i></a>
-
-                                </div>
-                            </div>
-                        </div>-->
-                        <!-- Column -->
                     </div>
                 </div>
             </div>
@@ -4208,10 +4190,9 @@
     <!-- ============================================================== -->
     <!-- End Wrapper -->
 </div>
-
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-<script>
+<link rel="stylesheet" media="none" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" async></script>
+<script async>
     window.addEventListener("load", function(){
         window.cookieconsent.initialise({
             "palette": {
@@ -4236,10 +4217,8 @@
         })});
 </script>
 <!-- ============================================================== -->
-<!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<!--<script src="../assets/node_modules/jquery/dist/jquery.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- Bootstrap popper Core JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -4247,29 +4226,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/easing/EasePack.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenLite.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
 <script src="https://cdn.rawgit.com/hilios/jQuery.countdown/2.2.0/dist/jquery.countdown.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data.min.js"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/onlinechat.js" async></script>
 <!-- ============================================================== -->
 <!-- This page plugins -->
 <!-- ============================================================== -->
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script src="js/onlinechat.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100481535-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113992084-1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'UA-100481535-1');
+
+    gtag('config', 'UA-113992084-1');
     gtag('config', 'AW-807805114');
 </script>
 
@@ -4285,5 +4261,4 @@
 </script>
 
 </body>
-
 </html>
