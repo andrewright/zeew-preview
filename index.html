@@ -4208,6 +4208,32 @@
     <!-- ============================================================== -->
     <!-- End Wrapper -->
 </div>
+
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+    window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#f4f8fa",
+                    "text": "#8d97ad"
+                },
+                "button": {
+                    "background": "transparent",
+                    "text": "#4bb20f",
+                    "border": "#4bb20f"
+                }
+            },
+            "position": "top",
+            "content": {
+                "message": "Zeew site uses cookies to ensure you get the best experience on our website.",
+                "dismiss": "Got it!",
+                "link": "Read Terms &amp; Conditions",
+                "href": "https://cookies.insites.com/about-cookies/"
+            }
+        })});
+</script>
 <!-- ============================================================== -->
 <!-- ============================================================== -->
 <!-- All Jquery -->
