@@ -702,6 +702,7 @@ Blog homepage 5
     background-repeat: no-repeat;
     background-position: top right;
     background-size: cover;
+    overflow: hidden;
 }
 
 .blog-home5 .b-h-box .card-img {
@@ -727,7 +728,7 @@ Blog homepage 5
     display: none;
 }
 
-.blog-home5 .b-h-box:hover {
+.blog-home5 .b-h-box {
     color: #8d97ad;
 }
 
