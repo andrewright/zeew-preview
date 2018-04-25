@@ -92,7 +92,7 @@ $(function () {
         ));
     });
 
-    $('#countdown-clock-timeline').countdown(icoRoundOneStart.toDate(), function(event) {
+    $('#countdown-clock-timeline').countdown(icoRoundOneEnd.toDate(), function(event) {
         $(this).html(event.strftime(
                 '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
             +   '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
