@@ -496,7 +496,8 @@ $(function () {
                 var src = item.description.substring(srcStart, srcEnd); // Extract just the URL
 
                 var maxLengthTitle = 50; // maximum number of characters to extract
-                var trimmedStringTitle = item.description.substr(0, maxLengthTitle);
+                var yourStringTitle = item.description.replace(/(<([^>]+)>)/ig, "");
+                var trimmedStringTitle = yourStringTitle.substr(0, maxLengthTitle);
 
                 var maxLengthDescr = 80; // maximum number of characters to extract
 
