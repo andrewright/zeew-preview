@@ -42,6 +42,17 @@ Static slide 10
     line-height: 50px;
 }
 
+.static-slider10 .title.newTitle {
+    font-size: 36px;
+    line-height: 1;
+    margin-top: 0;
+}
+
+.static-slider10 .video-wrapper {
+    border: 3px solid #4BB20F;
+    border-radius: 5px;
+    height: 279px;
+}
 .static-slider10 .subtitle {
     color: #1d1e20;
 }
