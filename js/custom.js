@@ -487,8 +487,6 @@ $(function () {
         if (response.status == 'ok') {
             var output = '';
             $.each(response.items, function (k, item) {
-                console.log(item);
-
                 var tagIndex = item.description.indexOf('<img'); // Find where the img tag starts
                 var srcIndex = item.description.substring(tagIndex).indexOf('src=') + tagIndex; // Find where the src attribute starts
                 var srcStart = srcIndex + 5; // Find where the actual image URL starts; 5 for the length of 'src="'
