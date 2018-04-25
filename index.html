@@ -154,7 +154,7 @@
                         <div class="row p-20">
                             <div class="col-md-12 text-center">
                                 <a class="btn btn-zeew-gradiant btn-submit-wide btn-md btn-arrow m-t-20"
-                                   href="https://wallet.zeew.eu" style="width: 220px"><span>Buy tokens <i
+                                   href="https://wallet.zeew.eu" style="width: 220px" onClick="conversion()"><span>Buy tokens <i
                                         class="ti-arrow-right"></i></span></a>
 
                                 <a class="btn btn-outline-zeew btn-md btn-arrow m-t-20"
@@ -215,7 +215,7 @@
                         <div class="row justify-content-center">
                             <div class="col-md-6 text-center">
                                 <a class="btn btn-zeew-gradiant btn-md btn-arrow m-r-40" href="https://wallet.zeew.eu"
-                                   data-aos="fade-left"><span>Buy tokens <i class="ti-arrow-right"></i></span></a>
+                                   data-aos="fade-left" onClick="conversion()"><span>Buy tokens <i class="ti-arrow-right"></i></span></a>
                                 <a class="linking font-medium" href="#Timeline" style="display: inline-block"
                                    data-aos="fade-right">View all Rounds <i class="ti-arrow-right text-zeew"></i></a>
                             </div>
@@ -330,7 +330,7 @@
                                 Zeew has offices in Malta and Latvia
                             </p>
                             <a class="btn btn-zeew-gradiant btn-md btn-arrow m-t-20"
-                               href="https://wallet.zeew.eu"><span>Buy tokens <i class="ti-arrow-right"></i></span></a>
+                               href="https://wallet.zeew.eu" onClick="conversion()"><span>Buy tokens <i class="ti-arrow-right"></i></span></a>
                         </div>
                         <div class="col-md-5 m-t-40 justify-content-center">
                             <img src="images/Front-1.png" class="img-fluid"/>
@@ -4170,7 +4170,7 @@
 </div>
 <link rel="stylesheet" media="none" onload="if(media!='all')media='all'" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" async></script>
-<script>
+<script async>
     window.addEventListener("load", function(){
         window.cookieconsent.initialise({
             "palette": {
@@ -4226,10 +4226,13 @@
     gtag('config', 'UA-113992084-1');
     gtag('config', 'AW-807805114');
 
-    gtag('event', 'conversion', {
-        'send_to': 'AW-807805114/fHaeCJmQ8IABELrBmIED',
-        'transaction_id': ''
-    });
+    function conversion() {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-807805114/fHaeCJmQ8IABELrBmIED',
+            'transaction_id': ''
+        });
+        console.log('converse');
+    }
 </script>
 
 <script type="text/javascript">
