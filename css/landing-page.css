@@ -53,6 +53,12 @@ Static slide 10
     border-radius: 5px;
     height: 279px;
 }
+.static-slider10 .token-rounds .subtitle.exchange {
+    font-weight: 700;
+}
+.static-slider10 .token-rounds .subtitle {
+    color: #8d97ad;
+}
 .static-slider10 .subtitle {
     color: #1d1e20;
 }
@@ -1025,6 +1031,18 @@ Responsive
     background-color: rgba(255, 255, 255, 0.81);
 }
 
+.table-responsive tr.upcoming {
+    opacity: .7;
+    transform: scale(0.98);
+}
+.table-responsive tr.upcoming:hover {
+    opacity: 1;
+    transform: scale(1);
+}
+.table-responsive tr.active-sales td {
+    font-size: 18px;
+    font-weight: 500;
+}
 .table-responsive tr {
     transition: all .250s ease-in-out;
 }

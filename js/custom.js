@@ -110,7 +110,7 @@ $(function () {
     AOS.init()
 
     var icoRoundOneStart = moment.tz("2018-04-25 10:00", "Europe/Riga");
-    var icoRoundOneEnd = moment.tz("2018-05-09 10:00", "Europe/Riga");
+    var icoRoundOneEnd = moment.tz("2018-05-14 10:00", "Europe/Riga");
 
     $('#countdown-clock-header-main').countdown(icoRoundOneStart.toDate(), function (event) {
         $(this).html(event.strftime(
