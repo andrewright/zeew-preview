@@ -1047,8 +1047,16 @@ Responsive
     transition: all .250s ease-in-out;
 }
 
-.table-responsive tr:hover {
+.table-responsive tr:hover td{
     background-color: rgba(75, 178, 15, 0.09);
+}
+
+.rounds-timeline .table-responsive .table td.bonus-size{
+    font-size: 1.6rem;
+}
+.rounds-timeline .table-responsive .table th {
+    border: 0;
+    padding-top: 50px;
 }
 
 .banner .color-overlay {

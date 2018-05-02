@@ -107,7 +107,20 @@ $(function () {
     $(function () {
         $(".preloader").fadeOut()
     });
-    AOS.init()
+    AOS.init();
+
+    var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+    var firstDate = new Date();
+    var secondDate = new Date(2018, 5, 28);
+
+    var ms = Math.abs(secondDate - firstDate);
+    console.log(ms);
+
+    var diff = new moment.duration(ms);
+
+    var diffDays = Math.round(Math.abs(ms/oneDay));
+    console.log(diff.asDays());
+
 
     var icoRoundOneStart = moment.tz("2018-04-25 10:00", "Europe/Riga");
     var icoRoundOneEnd = moment.tz("2018-05-14 10:00", "Europe/Riga");
