@@ -113,13 +113,12 @@ $(function () {
     var firstDate = new Date();
     var secondDate = new Date(2018, 5, 28);
 
-    var ms = Math.abs(secondDate - firstDate);
-    console.log(ms);
+    function countDate(nowDate, futureDate) {
+        let ms = Math.abs(futureDate - nowDate);
+        return Math.round(Math.abs(ms/oneDay));
+    }
 
-    var diff = new moment.duration(ms);
-
-    var diffDays = Math.round(Math.abs(ms/oneDay));
-    console.log(diff.asDays());
+    $('.roundDaysIn28May').text(countDate(nowDate, roundDaysIn28May));
 
 
     var icoRoundOneStart = moment.tz("2018-04-25 10:00", "Europe/Riga");
