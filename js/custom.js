@@ -109,18 +109,6 @@ $(function () {
     });
     AOS.init();
 
-    var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-    var firstDate = new Date();
-    var secondDate = new Date(2018, 5, 28);
-
-    function countDate(nowDate, futureDate) {
-        let ms = Math.abs(futureDate - nowDate);
-        return Math.round(Math.abs(ms/oneDay));
-    }
-
-    $('.roundDaysIn28May').text(countDate(nowDate, roundDaysIn28May));
-
-
     var icoRoundOneStart = moment.tz("2018-04-25 10:00", "Europe/Riga");
     var icoRoundOneEnd = moment.tz("2018-05-14 10:00", "Europe/Riga");
 
