@@ -1072,6 +1072,17 @@ Responsive
     border-bottom: 2px dashed #8d97ad;
 
 }
+.referral-section .referral-percentages span {
+    font-size: 110px;
+}
+.referral-section .referral-percentages {
+    font-size: 22rem;
+    font-weight: 500;
+    line-height: 1;
+}
+.referral-section .referral-best-title {
+    font-weight: 700;
+}
 
 .referral-icons i {
     font-size: 90px;
