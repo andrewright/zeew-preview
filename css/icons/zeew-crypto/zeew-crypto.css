@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'zeew-crypto';
+  src:  url('fonts/zeew-crypto.eot?3c6ejp');
+  src:  url('fonts/zeew-crypto.eot?3c6ejp#iefix') format('embedded-opentype'),
+    url('fonts/zeew-crypto.ttf?3c6ejp') format('truetype'),
+    url('fonts/zeew-crypto.woff?3c6ejp') format('woff'),
+    url('fonts/zeew-crypto.svg?3c6ejp#zeew-crypto') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="zc-icon-"], [class*=" zc-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'zeew-crypto' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.zc-icon-USD:before {
+  content: "\e900";
+}
+.zc-icon-EUR:before {
+  content: "\e901";
+}
+.zc-icon-BTC:before {
+  content: "\e902";
+}
+.zc-icon-BTC-alt:before {
+  content: "\e903";
+}
+.zc-icon-ETH:before {
+  content: "\e904";
+}
+.zc-icon-ETH-alt:before {
+  content: "\e905";
+}
+.zc-icon-LTC:before {
+  content: "\e906";
+}
+.zc-icon-LTC-alt:before {
+  content: "\e907";
+}
