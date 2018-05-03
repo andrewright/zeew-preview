@@ -48,10 +48,20 @@ Static slide 10
     margin-top: 0;
 }
 
+.static-slider10 .main-buy-tokens {
+    padding: 20px 60px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.static-slider10 .quick-launch {
+    padding-top: 30px;
+    font-size: 18px;
+}
 .static-slider10 .video-wrapper {
-    border: 3px solid #4BB20F;
+    border: 1px solid #4BB20F;
     border-radius: 5px;
     height: 279px;
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 60px -10px rgba(0, 0, 0, 0.25);
 }
 .static-slider10 .token-rounds .subtitle.exchange {
     font-weight: 700;
@@ -582,19 +592,26 @@ wahooo!!!!!!! It worked!!!
         top: 380px;
     }
 }
-
-.clock-container {
-    font-family: 'Montserrat', 'sans-serif';
-    margin-top: 20px;
+.clock-container-wrapper .banner1 input {
+    line-height: 56px;
+}
+.clock-container-wrapper .banner1 input[type="text"], .banner1 input[type="email"] {
+    width: 51%;
+}
+.clock-container-wrapper {
+    margin-top: 11px;
     margin-bottom: 20px;
     border-radius: 5px;
-    padding: 40px 20px;
+    padding: 24px 20px 40px;
     box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 60px -10px rgba(0, 0, 0, 0.25);
-    display: flex;
-    border: 3px solid #4bb20f;
+    display: grid;
+    border: 1px solid #4bb20f;
     z-index: 2;
     position: relative;
     background: rgba(255, 255, 255, 0.81);
+}
+.clock-container {
+    display: flex;
 }
 
 .clock-col {
