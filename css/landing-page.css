@@ -652,12 +652,22 @@ wahooo!!!!!!! It worked!!!
     font-weight: bold;
     font-size: .7rem;
     margin-top: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 @media (max-width: 1200px) {
-    .clock-container {
-        padding-top: 10px;
-        padding-bottom: 10px;
+    .clock-container-wrapper {
+        padding: 33px 20px 30px;
+    }
+
+    .clock-container-wrapper .subscribe .subscribe-form{
+        min-width: auto;
+    }
+
+    .static-slider10 .video-wrapper {
+        height: 231px;
     }
 
     .clock-col {
@@ -683,22 +693,47 @@ wahooo!!!!!!! It worked!!!
 }
 
 @media (max-width: 992px) {
-    .clock-container {
+    .clock-container-wrapper {
         flex-direction: column;
-        padding-top: 10px;
+        padding-top: 13px;
         padding-bottom: 10px;
+        margin-top: 46px;
     }
 
     .clock-col:before, .clock-col:after {
         display: none !important;
     }
+    .clock-container-wrapper .banner1 input {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+    }
+    .clock-container-wrapper .clock-label {
+        margin-top: 0;
+    }
+    .clock-container-wrapper .clock-timer  {
+        margin-bottom: 0;
+    }
+
+    .video-wrapper {
+        height: 170px;
+    }
+
 }
 
 @media (max-width: 768px) {
-    .clock-container {
+    .clock-container-wrapper {
         flex-direction: row;
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+    .clock-col:before, .clock-col:after {
+        display: block !important;
+    }
+
+    .clock-container-wrapper .banner1 .subscribe-form {
+        width: 100%;
     }
 }
 
