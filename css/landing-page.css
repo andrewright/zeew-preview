@@ -393,6 +393,10 @@ Testimonial 3
 }
 
 /* Component News*/
+.component-news .card .card-body {
+    padding: 1.25rem 2rem;
+    font-weight: normal;
+}
 .component-news .card .card-subtitle {
     margin: 16px 0;
 }
