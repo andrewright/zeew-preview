@@ -163,10 +163,11 @@
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
-    var id = getParameterByName('id') + ".html";
+    var pageId = getParameterByName('id') || 'Mohamed';
+    var pageUrl = pageId + ".html";
 
     $.ajax({
-        url: id,
+        url: pageUrl,
         context: document.body,
         success: function (response) {
             $("#content-loader").html(response);
