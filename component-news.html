@@ -277,7 +277,7 @@
     var newsId = 'news-' + getParameterByName('news') + ".html";
 
     $.ajax({
-        url: newsId,
+        url: 'component-footer.html',
         context: document.body,
         success: function (response) {
             $("#footer-loader").html(response);
@@ -286,7 +286,7 @@
     });
 
     $.ajax({
-        url: 'news/news-1.html',
+        url: newsId,
         context: document.body,
         success: function (response) {
             $("#news-content").html(response);
