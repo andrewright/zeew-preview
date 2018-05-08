@@ -101,7 +101,7 @@
                         </div>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <a class="linking font-medium" href="#">Readmore <i class="ti-arrow-right text-zeew"></i></a>
+                        <a class="linking font-medium" href="/news.html?article=2">Readmore <i class="ti-arrow-right text-zeew"></i></a>
                     </div>
                 </div>
                 <div class="card card-shadow">
@@ -113,7 +113,7 @@
                         </div>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <a class="linking font-medium" href="#">Readmore <i class="ti-arrow-right text-zeew"></i></a>
+                        <a class="linking font-medium" href="/news.html?article=3">Readmore <i class="ti-arrow-right text-zeew"></i></a>
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                         </div>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
                                 of the card's content.</p>
-                            <a class="linking font-medium" href="#">Readmore <i
+                            <a class="linking font-medium" href="/news.html?article=4">Readmore <i
                                     class="ti-arrow-right text-zeew"></i></a>
                         </div>
                     </div>
@@ -144,7 +144,7 @@
                         </div>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
                                 of the card's content.</p>
-                            <a class="linking font-medium" href="#">Readmore <i
+                            <a class="linking font-medium" href="/news.html?article=5">Readmore <i
                                     class="ti-arrow-right text-zeew"></i></a>
                         </div>
                     </div>
@@ -157,7 +157,7 @@
                         </div>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
                                 of the card's content.</p>
-                            <a class="linking font-medium" href="#">Readmore <i
+                            <a class="linking font-medium" href="/news.html?article=6">Readmore <i
                                     class="ti-arrow-right text-zeew"></i></a>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                                 of the card's content. Some quick example text to build on the card title and make up
                                 the bulk
                                 of the card's content. </p>
-                            <a class="linking font-medium" href="#">Readmore <i
+                            <a class="linking font-medium" href="/news.html?article=7">Readmore <i
                                     class="ti-arrow-right text-zeew"></i></a>
                         </div>
                     </div>
@@ -274,22 +274,21 @@
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
-    var newsId = 'news/news-' + getParameterByName('news') + ".html";
+    var newsId = 'news/news-' + getParameterByName('article') + ".html";
+    $.ajax({
+        url: newsId,
+        context: document.body,
+        success: function (response) {
+            $("#news-content").html(response);
+        },
+        crossDomain: true
+    });
 
     $.ajax({
         url: 'component-footer.html',
         context: document.body,
         success: function (response) {
             $("#footer-loader").html(response);
-        },
-        crossDomain: true
-    });
-
-    $.ajax({
-        url: newsId,
-        context: document.body,
-        success: function (response) {
-            $("#news-content").html(response);
         },
         crossDomain: true
     });
