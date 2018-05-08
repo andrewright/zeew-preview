@@ -121,7 +121,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <div class="card-deck">
+                <div class="card-columns">
                     <div class="card card-shadow">
                         <img class="card-img-top" src="https://picsum.photos/600/400/?random" alt="Card image cap">
                         <div class="card-body">
@@ -264,8 +264,20 @@
 </script>
 
 <script type="text/javascript" language="JavaScript">
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    var newsId = 'news-' + getParameterByName('news') + ".html";
+
     $.ajax({
-        url: 'component-footer.html',
+        url: newsId,
         context: document.body,
         success: function (response) {
             $("#footer-loader").html(response);
