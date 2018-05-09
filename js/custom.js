@@ -350,53 +350,41 @@ $(function () {
     });
     AOS.init();
 
-    var icoRoundOneStart = moment.tz("2018-04-25 10:00", "Europe/Riga");
-    var icoRoundOneEnd = moment.tz("2018-05-14 10:00", "Europe/Riga");
+    var icoRoundOneStart = moment.tz("2018-05-14 10:00", "Europe/Riga");
+    /*var icoRoundOneEnd = moment.tz("2018-05-27 10:00", "Europe/Riga");*/
 
-    $('#countdown-clock-header-main').countdown(icoRoundOneStart.toDate(), function (event) {
-        $(this).html(event.strftime(
-            '<div class="clock-col"><p class="clock-day clock-timer">%-D</p><p class="clock-label">Day%!d</p></div>'
-            + '<div class="clock-col"><p class="clock-hours clock-timer">%H</p><p class="clock-label">Hours</p></div>'
-            + '<div class="clock-col"><p class="clock-minutes clock-timer">%M</p><p class="clock-label">Minutes</p></div>'
-            + '<div class="clock-col"><p class="clock-seconds clock-timer">%S</p><p class="clock-label">Seconds</p></div>'
-        ));
-    });
+    if ($('#countdown-clock-header-main')) {
+        $('#countdown-clock-header-main').countdown(icoRoundOneStart.toDate(), function (event) {
+            $(this).html(event.strftime(
+                '<div class="clock-col"><p class="clock-day clock-timer">%-D</p><p class="clock-label">Day%!d</p></div>'
+                + '<div class="clock-col"><p class="clock-hours clock-timer">%H</p><p class="clock-label">Hours</p></div>'
+                + '<div class="clock-col"><p class="clock-minutes clock-timer">%M</p><p class="clock-label">Minutes</p></div>'
+                + '<div class="clock-col"><p class="clock-seconds clock-timer">%S</p><p class="clock-label">Seconds</p></div>'
+            ));
+        });
+    }
 
-    $('#countdown-clock-header-main-2').countdown(icoRoundOneEnd.toDate(), function (event) {
-        $(this).html(event.strftime(
-            '<div class="clock-col"><p class="clock-day clock-timer">%-D</p><p class="clock-label">Day%!d</p></div>'
-            + '<div class="clock-col"><p class="clock-hours clock-timer">%H</p><p class="clock-label">Hours</p></div>'
-            + '<div class="clock-col"><p class="clock-minutes clock-timer">%M</p><p class="clock-label">Minutes</p></div>'
-            + '<div class="clock-col"><p class="clock-seconds clock-timer">%S</p><p class="clock-label">Seconds</p></div>'
-        ));
-    });
+    if ($('#countdown-clock-header')) {
+        $('#countdown-clock-header').countdown(icoRoundOneStart.toDate(), function (event) {
+            $(this).html(event.strftime(
+                '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
+                + '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
+                + '<span class="data-countdown data-min" data-label="Min">%M</span>:'
+                + '<span class="data-countdown data-sec" data-label="Sec">%S</span>'
+            ));
+        });
+    }
 
-    $('#countdown-clock-header').countdown(icoRoundOneStart.toDate(), function (event) {
-        $(this).html(event.strftime(
-            '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
-            + '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
-            + '<span class="data-countdown data-min" data-label="Min">%M</span>:'
-            + '<span class="data-countdown data-sec" data-label="Sec">%S</span>'
-        ));
-    });
-
-    $('#countdown-clock-header-2').countdown(icoRoundOneEnd.toDate(), function (event) {
-        $(this).html(event.strftime(
-            '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
-            + '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
-            + '<span class="data-countdown data-min" data-label="Min">%M</span>:'
-            + '<span class="data-countdown data-sec" data-label="Sec">%S</span>'
-        ));
-    });
-
-    $('#countdown-clock-timeline').countdown(icoRoundOneEnd.toDate(), function (event) {
-        $(this).html(event.strftime(
-            '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
-            + '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
-            + '<span class="data-countdown data-min" data-label="Min">%M</span>:'
-            + '<span class="data-countdown data-sec" data-label="Sec">%S</span>'
-        ));
-    });
+    if($('#countdown-clock-timeline')) {
+        $('#countdown-clock-timeline').countdown(icoRoundOneStart.toDate(), function (event) {
+            $(this).html(event.strftime(
+                '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
+                + '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
+                + '<span class="data-countdown data-min" data-label="Min">%M</span>:'
+                + '<span class="data-countdown data-sec" data-label="Sec">%S</span>'
+            ));
+        });
+    }
 });
 
 
