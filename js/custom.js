@@ -1,4 +1,54 @@
+var ls = window.localStorage;
+function setLsPopup() {
+    ls.setItem('popup', new Date().getTime());
+}
+function matchTime(timestemp) {
+    var nowDate = new Date().getTime();
+    timestemp = timestemp || '0';
+    var diff = String(nowDate) - String(timestemp);
+    if (isNaN(diff)) {
+        diff = 86400001
+    }
+    if (diff > 86400000 /*1 day , 1521504000000 /*1 week*/) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function checkLsPopup() {
+    var lsData = ls.getItem('popup');
+    if (lsData == null || matchTime(lsData)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function checkLsTerms(){
+    var lsData = ls.terms;
+    if (lsData === undefined) {
+        return false;
+    } else {
+        return true;
+    }
+}
+function switchLsTerms() {
+    var lsData = ls.terms;
+    if(lsData === undefined) {
+        ls.setItem('terms', true);
+    } else {
+        ls.removeItem('terms');
+    }
+
+}
+
 (function () {
+    if($('.terms')) {
+        if(checkLsTerms()) {
+            $('.terms').prop('checked', true);
+        }
+    }
+
     var lastTime = 0;
     var vendors = ['ms', 'moz', 'webkit', 'o'];
     for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
@@ -99,66 +149,9 @@
     $('.close-button').on('click', function () {
         $('body').removeClass('not-leave');
     })
-})();
 
 
-$(function () {
-    "use strict";
-    $(function () {
-        $(".preloader").fadeOut()
-    });
-    AOS.init();
-
-    var icoRoundOneStart = moment.tz("2018-04-25 10:00", "Europe/Riga");
-    var icoRoundOneEnd = moment.tz("2018-05-14 10:00", "Europe/Riga");
-
-    $('#countdown-clock-header-main').countdown(icoRoundOneStart.toDate(), function (event) {
-        $(this).html(event.strftime(
-            '<div class="clock-col"><p class="clock-day clock-timer">%-D</p><p class="clock-label">Day%!d</p></div>'
-            + '<div class="clock-col"><p class="clock-hours clock-timer">%H</p><p class="clock-label">Hours</p></div>'
-            + '<div class="clock-col"><p class="clock-minutes clock-timer">%M</p><p class="clock-label">Minutes</p></div>'
-            + '<div class="clock-col"><p class="clock-seconds clock-timer">%S</p><p class="clock-label">Seconds</p></div>'
-        ));
-    });
-
-    $('#countdown-clock-header-main-2').countdown(icoRoundOneEnd.toDate(), function (event) {
-        $(this).html(event.strftime(
-            '<div class="clock-col"><p class="clock-day clock-timer">%-D</p><p class="clock-label">Day%!d</p></div>'
-            + '<div class="clock-col"><p class="clock-hours clock-timer">%H</p><p class="clock-label">Hours</p></div>'
-            + '<div class="clock-col"><p class="clock-minutes clock-timer">%M</p><p class="clock-label">Minutes</p></div>'
-            + '<div class="clock-col"><p class="clock-seconds clock-timer">%S</p><p class="clock-label">Seconds</p></div>'
-        ));
-    });
-
-    $('#countdown-clock-header').countdown(icoRoundOneStart.toDate(), function (event) {
-        $(this).html(event.strftime(
-            '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
-            + '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
-            + '<span class="data-countdown data-min" data-label="Min">%M</span>:'
-            + '<span class="data-countdown data-sec" data-label="Sec">%S</span>'
-        ));
-    });
-
-    $('#countdown-clock-header-2').countdown(icoRoundOneEnd.toDate(), function (event) {
-        $(this).html(event.strftime(
-            '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
-            + '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
-            + '<span class="data-countdown data-min" data-label="Min">%M</span>:'
-            + '<span class="data-countdown data-sec" data-label="Sec">%S</span>'
-        ));
-    });
-
-    $('#countdown-clock-timeline').countdown(icoRoundOneEnd.toDate(), function (event) {
-        $(this).html(event.strftime(
-            '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
-            + '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
-            + '<span class="data-countdown data-min" data-label="Min">%M</span>:'
-            + '<span class="data-countdown data-sec" data-label="Sec">%S</span>'
-        ));
-    });
-});
-
-(function () {
+    /*Network animation*/
 
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
 
@@ -346,7 +339,54 @@ $(function () {
         return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
     }
 
+    /*Network animation end*/
+
 })();
+
+$(function () {
+    "use strict";
+    $(function () {
+        $(".preloader").fadeOut()
+    });
+    AOS.init();
+
+    var icoRoundOneStart = moment.tz("2018-05-14 10:00", "Europe/Riga");
+    /*var icoRoundOneEnd = moment.tz("2018-05-27 10:00", "Europe/Riga");*/
+
+    if ($('#countdown-clock-header-main')) {
+        $('#countdown-clock-header-main').countdown(icoRoundOneStart.toDate(), function (event) {
+            $(this).html(event.strftime(
+                '<div class="clock-col"><p class="clock-day clock-timer">%-D</p><p class="clock-label">Day%!d</p></div>'
+                + '<div class="clock-col"><p class="clock-hours clock-timer">%H</p><p class="clock-label">Hours</p></div>'
+                + '<div class="clock-col"><p class="clock-minutes clock-timer">%M</p><p class="clock-label">Minutes</p></div>'
+                + '<div class="clock-col"><p class="clock-seconds clock-timer">%S</p><p class="clock-label">Seconds</p></div>'
+            ));
+        });
+    }
+
+    if ($('#countdown-clock-header')) {
+        $('#countdown-clock-header').countdown(icoRoundOneStart.toDate(), function (event) {
+            $(this).html(event.strftime(
+                '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
+                + '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
+                + '<span class="data-countdown data-min" data-label="Min">%M</span>:'
+                + '<span class="data-countdown data-sec" data-label="Sec">%S</span>'
+            ));
+        });
+    }
+
+    if($('#countdown-clock-timeline')) {
+        $('#countdown-clock-timeline').countdown(icoRoundOneStart.toDate(), function (event) {
+            $(this).html(event.strftime(
+                '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
+                + '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
+                + '<span class="data-countdown data-min" data-label="Min">%M</span>:'
+                + '<span class="data-countdown data-sec" data-label="Sec">%S</span>'
+            ));
+        });
+    }
+});
+
 
 var progressStep = $('.bs-wizard-step');
 var roadmap = $('.roadmap');
@@ -370,153 +410,5 @@ progressStep.on('click', function () {
     $(this).nextAll().each(function (i, obj) {
         $(obj).removeClass('active').removeClass('complete');
         removeElementsFromMap($(obj).data('year'));
-    });
-});
-
-
-/*
-var ls = window.localStorage;
-var lsTermsSet = function (arg) {
-    ls.setItem('terms', arg.toString());
-};
-
-var toJSON = function (data) {
-    JSON.stringify(data);
-}
-var fromJSON= function (data) {
-    JSON.parse(data);
-}
-
-var lsPopupSet = function (arg) {
-    var timestamp = new Date().getTime();
-    var settingsObject =
-        {
-            'showed' : arg,
-            'timestamp' : timestamp
-        };
-    ls.setItem('popup', toJSON(settingsObject));
-};
-
-var timeMatch = function (lsName) {
-    ls.getItem(lsName)
-    var readFromLs = JSON.parse(ls.getItem(lsName));
-    if (readFromLs.timestamp % new Date().getTime() > 1521504000000 /!*more than 1 week*!/) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-(function () {
-    if(ls.getItem('terms') == '1') {
-        $('.terms').prop('checked', true);
-    }
-})();
-
-var toggleTerms = function () {
-    if(ls.getItem('terms') == '0' || !ls.getItem('terms')) {
-        lsTermsSet('1');
-    } else {
-        lsTermsSet('0');
-    }
-};
-
-//1 week 1521504000000
-
-new Date().getTime() % popupTimestamp  > 1521504000000
-
-var togglePopup = function () {
-    var data = fromJSON(ls.getItem('popup'));
-    if(data.showed || !ls.getItem('popup') /!*|| timeExpire*!/) {
-        data.showed = true;
-    } elseif (/!*if timestamp expire*!/){
-        lsPopupSet('0');
-    }
-};
-
-$( document ).ready(function() {
-    $("html").bind("mouseenter",function(){
-        /!* optional *!/
-    }).bind("mouseleave",function(){
-        if(ls.getItem('popup') == '0' || !ls.getItem('popup')) {
-            $('body').addClass('not-leave');
-            /!* do somthing (ex. init modal) *!/
-            /!*alert('test');*!/
-            /!* set cookie so this does not repeat *!/
-            lsPopupSet(true);
-        }
-    });
-    $('.close-button').on('click', function () {
-        $('body').removeClass('not-leave');
-    })
-});*/
-
-
-var ls = window.localStorage;
-var setLsPopup = function () {
-    ls.setItem('popup', new Date().getTime());
-}
-var matchTime = function (timestemp) {
-    var nowDate = new Date().getTime();
-    timestemp = timestemp || '0'
-    var diff = String(nowDate) - String(timestemp)
-    if (isNaN(diff)) {
-        diff = 86400001
-    }
-    if (diff > 86400000 /*1 day , 1521504000000 /*1 week*/) {
-        return true;
-    } else {
-        return false;
-    }
-}
-var checkLsPopup = function () {
-    var lsData = ls.getItem('popup');
-    if (lsData == null || matchTime(lsData)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-$(function () {
-    var $content = $('#newsContent');
-    var data = {
-        rss_url: 'https://medium.com/feed/@zeewapp'
-    };
-    $.get('https://api.rss2json.com/v1/api.json', data, function (response) {
-        if (response.status == 'ok') {
-            var output = '';
-            $.each(response.items, function (k, item) {
-                var tagIndex = item.description.indexOf('<img'); // Find where the img tag starts
-                var srcIndex = item.description.substring(tagIndex).indexOf('src=') + tagIndex; // Find where the src attribute starts
-                var srcStart = srcIndex + 5; // Find where the actual image URL starts; 5 for the length of 'src="'
-                var srcEnd = item.description.substring(srcStart).indexOf('"') + srcStart; // Find where the URL ends
-                var src = item.description.substring(srcStart, srcEnd); // Extract just the URL
-
-                var maxLengthTitle = 50; // maximum number of characters to extract
-                var yourStringTitle = item.title.replace(/(<([^>]+)>)/ig, "");
-                var trimmedStringTitle = yourStringTitle.substr(0, maxLengthTitle);
-
-                var maxLengthDescr = 80; // maximum number of characters to extract
-
-                var yourStringDescr = item.description.replace(/(<([^>]+)>)/ig, "");
-                var trimmedStringDescr = yourStringDescr.substr(0, maxLengthDescr);
-
-                output += '<div class="col-md-4">';
-                output += '<div class="card b-h-box font-14" data-aos="flip-left" style="background-image: url(' + src + ')">';
-
-                /*output += '<img class="card-img" src="' + src + '" alt="' + item.title + '">';*/
-                output += '<div class="card-img-overlay">';
-                output += '<span class="bg-zeew-gradiant label">' + item.author + '</span> <span class="m-l-10">' + $.format.date(item.pubDate, 'MMM d yyyy') + '</span>';
-                output += '<h5 class="card-title">' + trimmedStringTitle + '...</h5>';
-                output += '<p class="card-text">' + trimmedStringDescr + '...</p>';
-                output += '<a class="linking font-medium" href="' + item.link + '" target="_blank">Readmore <i class="ti-arrow-right text-zeew"></i></a>';
-                output += '</div>';
-                output += '</div>';
-                output += '</div>';
-                return k < 5;
-            });
-            $content.html(output);
-        }
     });
 });
