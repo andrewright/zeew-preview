@@ -480,7 +480,7 @@ function checkLsPopup() {
 
 function checkLsTerms(){
     var lsData = ls.getItem('terms');
-    if (lsData) {
+    if (lsData === undefined) {
         return true;
     } else {
         return false;
@@ -488,7 +488,7 @@ function checkLsTerms(){
 }
 function switchLsTerms() {
     var lsData = ls.getItem('terms');
-    if(!lsData) {
+    if(lsData === undefined) {
         ls.setItem('terms', true);
     } else {
         ls.removeItem('terms');
