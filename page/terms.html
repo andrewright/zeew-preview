@@ -511,7 +511,7 @@
         </div>
 
             <label class="custom-control custom-checkbox m-t-30 m-b-30">
-                <input type="checkbox" class="custom-control-input terms" onclick="toggleTermsCookie()">
+                <input type="checkbox" class="custom-control-input terms" onclick="switchLsTerms()">
                 <span class="custom-control-indicator"></span>
                 <span class="custom-control-description">I, as the User, have read and understood the above representations as well as the full <br> Terms & Conditions of this Agreement.</span>
             </label>
@@ -525,24 +525,9 @@
     </div>
 </div>
 <script>
-    var ls = window.localStorage;
-    var lsTermsSet = function (arg) {
-        ls.setItem('terms', arg.toString());
-    };
-
     (function () {
-        if(ls.getItem('terms') == '1') {
+        if(checkLsTerms()) {
             $('.terms').prop('checked', true);
         }
     })();
-
-    var toggleTermsCookie = function () {
-        if(ls.getItem('terms') == '0' || !ls.getItem('terms')) {
-            lsTermsSet('1');
-            console.log('set 1 = ' + ls.getItem('terms'));
-        } else {
-            lsTermsSet('0');
-            console.log('set 0 = ' + lsTermsStatus);
-        }
-    };
 </script>

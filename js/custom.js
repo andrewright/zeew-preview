@@ -453,13 +453,13 @@ $( document ).ready(function() {
 
 
 var ls = window.localStorage;
-var setLsPopup = function () {
+function setLsPopup() {
     ls.setItem('popup', new Date().getTime());
 }
-var matchTime = function (timestemp) {
+function matchTime(timestemp) {
     var nowDate = new Date().getTime();
-    timestemp = timestemp || '0'
-    var diff = String(nowDate) - String(timestemp)
+    timestemp = timestemp || '0';
+    var diff = String(nowDate) - String(timestemp);
     if (isNaN(diff)) {
         diff = 86400001
     }
@@ -469,13 +469,31 @@ var matchTime = function (timestemp) {
         return false;
     }
 }
-var checkLsPopup = function () {
+function checkLsPopup() {
     var lsData = ls.getItem('popup');
     if (lsData == null || matchTime(lsData)) {
         return true;
     } else {
         return false;
     }
+}
+
+function checkLsTerms(){
+    var lsData = ls.getItem('terms');
+    if (lsData) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function switchLsTerms() {
+    var lsData = ls.getItem('terms');
+    if(!lsData) {
+        ls.setItem('terms', true);
+    } else {
+        ls.removeItem('terms');
+    }
+
 }
 
 $(function () {
