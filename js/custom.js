@@ -479,15 +479,15 @@ function checkLsPopup() {
 }
 
 function checkLsTerms(){
-    var lsData = ls.getItem('terms');
+    var lsData = ls.terms;
     if (lsData === undefined) {
-        return true;
-    } else {
         return false;
+    } else {
+        return true;
     }
 }
 function switchLsTerms() {
-    var lsData = ls.getItem('terms');
+    var lsData = ls.terms;
     if(lsData === undefined) {
         ls.setItem('terms', true);
     } else {
