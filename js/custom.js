@@ -43,12 +43,6 @@ function switchLsTerms() {
 }
 
 (function () {
-    if($('.terms')) {
-        if(checkLsTerms()) {
-            $('.terms').prop('checked', true);
-        }
-    }
-
     var lastTime = 0;
     var vendors = ['ms', 'moz', 'webkit', 'o'];
     for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
@@ -344,6 +338,12 @@ function switchLsTerms() {
 })();
 
 $(function () {
+    if($('.terms')) {
+        if(checkLsTerms()) {
+            $('.terms').prop('checked', true);
+        }
+    }
+
     "use strict";
     $(function () {
         $(".preloader").fadeOut()
