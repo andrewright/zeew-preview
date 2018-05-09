@@ -497,6 +497,13 @@ function switchLsTerms() {
 }
 
 $(function () {
+
+    if($('.terms')) {
+        if(checkLsTerms()) {
+            $('.terms').prop('checked', true);
+        }
+    }
+
     var $content = $('#newsContent');
     var data = {
         rss_url: 'https://medium.com/feed/@zeewapp'
