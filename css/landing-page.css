@@ -781,6 +781,8 @@ Blog homepage 5
     background-position: top right;
     background-size: cover;
     overflow: hidden;
+    background-position: top left;
+    box-shadow: inset -40px -40px 100px 0px #fff;
 }
 
 .blog-home5 .b-h-box .card-img {
@@ -795,6 +797,8 @@ Blog homepage 5
     transition: .2s ease-in;
     height: 45%;
     overflow: hidden;
+    border: 3px solid rgba(120, 130, 140, 0);
+    background: rgba(0, 0, 0, 0.15);
 }
 
 .blog-home5 .b-h-box .card-title {
@@ -810,18 +814,18 @@ Blog homepage 5
     color: #8d97ad;
 }
 
-.blog-home5 .b-h-box .card-img-overlay {
+.blog-home5 .b-h-box:hover .card-img-overlay {
     height: 100%;
     background: #ffffff;
     border: 3px solid rgba(120, 130, 140, 0.13);
 }
 
-.blog-home5 .b-h-box .card-title {
+.blog-home5 .b-h-box:hover .card-title {
     color: #263238;
     margin: 15px 0;
 }
 
-.blog-home5 .b-h-box .card-text, .blog-home5 .b-h-box .linking {
+.blog-home5 .b-h-box:hover .card-text, .blog-home5 .b-h-box:hover .linking {
     display: block;
 }
 
