@@ -123,6 +123,18 @@
             <div class="col-md-12">
                 <div class="card-columns">
                     <div class="card card-shadow">
+                        <img class="card-img-top" src="https://cdn-images-1.medium.com/max/800/1*A-8UGQpGxBGxKEyVWVwpGA.jpeg" alt="The wait is nearly over.. 4 days to kick off!">
+                        <div class="card-body">
+                            <h4 class="card-title">The wait is nearly over.. 4 days to kick off!</h4>
+                            <div class="card-subtitle">
+                                <span class="bg-zeew-gradiant label">9 May</span>
+                            </div>
+                            <p class="card-text">After a successful pre-sale of 1,000,000 ZEEW Tokens at 50% discount, Zeew is getting closer to reaching the goal of expanding to other countries and becoming the go-to for fast courier deliveries.</p>
+                            <a class="linking font-medium" href="/news/?article=10">Readmore <i
+                                    class="ti-arrow-right text-zeew"></i></a>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
                         <img class="card-img-top" src="https://cdn-images-1.medium.com/max/800/0*rrXHgLV1184ABsAH.jpg" alt="Zeew wins €22,000 Malta Grant for innovation">
                         <div class="card-body">
                             <h4 class="card-title">Zeew wins €22,000 Malta Grant for innovation</h4>
@@ -280,7 +292,7 @@
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
-    var newsId = getParameterByName('article') || 1;
+    var newsId = getParameterByName('article') || 10;
     var newsUrl = 'news/news-' + newsId + ".html";
     $.ajax({
         url: newsUrl,
