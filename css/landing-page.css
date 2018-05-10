@@ -778,10 +778,9 @@ Blog homepage 5
     background-image: url("../images/b2b2c-bg.png");
     background-color: rgba(0, 0, 0, 0.2);
     background-repeat: no-repeat;
-    background-position: top right;
     background-size: cover;
     overflow: hidden;
-    background-position: top left;
+    background-position: top center;
     box-shadow: inset -40px -40px 100px 0px #fff;
 }
 
