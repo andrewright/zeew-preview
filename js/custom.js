@@ -351,10 +351,18 @@ $(function () {
     AOS.init();
 
     var icoRoundOneStart = moment.tz("2018-05-14 10:00", "Europe/Riga");
-    /*var icoRoundOneEnd = moment.tz("2018-05-27 10:00", "Europe/Riga");*/
+    var icoRoundOneEnd = moment.tz("2018-05-27 10:00", "Europe/Riga");
+    var countdownTimes = icoRoundOneStart;
+    var startsEndsText = 'Starts';
+
+    if (moment.tz("Europe/Riga") > icoRoundOneStart) {
+        countdownTimes = icoRoundOneEnd;
+        startsEndsText = 'Ends';
+        $('.startsEndsText').text(startsEndsText);
+    }
 
     if ($('#countdown-clock-header-main')) {
-        $('#countdown-clock-header-main').countdown(icoRoundOneStart.toDate(), function (event) {
+        $('#countdown-clock-header-main').countdown(countdownTimes.toDate(), function (event) {
             $(this).html(event.strftime(
                 '<div class="clock-col"><p class="clock-day clock-timer">%-D</p><p class="clock-label">Day%!d</p></div>'
                 + '<div class="clock-col"><p class="clock-hours clock-timer">%H</p><p class="clock-label">Hours</p></div>'
@@ -365,7 +373,7 @@ $(function () {
     }
 
     if ($('#countdown-clock-header')) {
-        $('#countdown-clock-header').countdown(icoRoundOneStart.toDate(), function (event) {
+        $('#countdown-clock-header').countdown(countdownTimes.toDate(), function (event) {
             $(this).html(event.strftime(
                 '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
                 + '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
@@ -376,7 +384,7 @@ $(function () {
     }
 
     if($('#countdown-clock-timeline')) {
-        $('#countdown-clock-timeline').countdown(icoRoundOneStart.toDate(), function (event) {
+        $('#countdown-clock-timeline').countdown(countdownTimes.toDate(), function (event) {
             $(this).html(event.strftime(
                 '<span class="data-countdown data-days" data-label="Day%!d">%-D</span>:'
                 + '<span class="data-countdown data-hr" data-label="Hr">%H</span>:'
