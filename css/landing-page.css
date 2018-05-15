@@ -1095,14 +1095,6 @@ Responsive
     background-color: rgba(255, 255, 255, 0.81);
 }
 
-.table-responsive tr.upcoming {
-    opacity: .7;
-    transform: scale(0.98);
-}
-.table-responsive tr.upcoming:hover {
-    opacity: 1;
-    transform: scale(1);
-}
 .table-responsive tr.active-sales td {
     font-size: 18px;
     font-weight: 500;
