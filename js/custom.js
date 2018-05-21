@@ -350,10 +350,82 @@ $(function () {
     });
     AOS.init();
 
+    const timeline = {
+        titleStart: 'Starts',
+        titleEnd: 'Ends',
+        round_1: {
+            title: 'ICO Round 1',
+            dateStart: '2018-05-14 10:00',
+            dateStartDay: '14 May',
+            dateEnd: '2018-05-14 10:00',
+            dateEndDay: '27 May',
+            amountOfZeew: '1,600,000',
+            bonusPercentage: '45%'
+        },
+        round_2: {
+            title: 'ICO Round 2',
+            dateStart: '2018-05-28 10:00',
+            dateStartDay: '28 May',
+            dateEnd: '2018-06-10 10:00',
+            dateEndDay: '10 Jun',
+            amountOfZeew: '1,600,000',
+            bonusPercentage: '36%'
+        },
+        round_3: {
+            title: 'ICO Round 3',
+            dateStart: '2018-06-11 10:00',
+            dateStartDay: '11 Jun',
+            dateEnd: '2018-06-24 10:00',
+            dateEndDay: '24 Jun',
+            amountOfZeew: '1,600,000',
+            bonusPercentage: '28%'
+        },
+        round_4: {
+            title: 'ICO Round 4',
+            dateStart: '2018-06-25 10:00',
+            dateStartDay: '25 Jun',
+            dateEnd: '2018-07-08 10:00',
+            dateEndDay: '8 Jul',
+            amountOfZeew: '1,600,000',
+            bonusPercentage: '17%'
+        },
+        round_5: {
+            title: 'ICO Round 5',
+            dateStart: '2018-07-9 10:00',
+            dateStartDay: '9 Jul',
+            dateEnd: '2018-07-22 10:00',
+            dateEndDay: '22 Jul',
+            amountOfZeew: '1,600,000',
+            bonusPercentage: '11%'
+        },
+        round_6: {
+            title: 'ICO Round 6',
+            dateStart: '2018-07-23 10:00',
+            dateStartDay: '23 Jul',
+            dateEnd: '2018-08-05 10:00',
+            dateEndDay: '5 Aug',
+            amountOfZeew: '1,600,000',
+            bonusPercentage: '7%'
+        },
+        round_7: {
+            title: 'ICO Round 7',
+            dateStart: '2018-08-6 10:00',
+            dateStartDay: '6 Aug',
+            dateEnd: '2018-08-20 10:00',
+            dateEndDay: '20 Aug',
+            amountOfZeew: '1,400,000',
+            bonusPercentage: '2%'
+        },
+    };
+
     var icoRoundOneStart = moment.tz("2018-05-14 10:00", "Europe/Riga");
     var icoRoundOneEnd = moment.tz("2018-05-27 10:00", "Europe/Riga");
     var countdownTimes = icoRoundOneStart;
     var startsEndsText = 'Starts';
+
+    if (moment.tz("Europe/Riga") > moment.tz(timeline.round_1.dateStart, "Europe/Riga")) {
+        console.log('RIGHT')
+    }
 
     if (moment.tz("Europe/Riga") > icoRoundOneStart) {
         countdownTimes = icoRoundOneEnd;
