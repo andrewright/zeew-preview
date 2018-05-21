@@ -305,7 +305,7 @@
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script src="js/onlinechat.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100481535-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113992084-1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -314,8 +314,17 @@
     }
 
     gtag('js', new Date());
-    gtag('config', 'UA-100481535-1');
+
+    gtag('config', 'UA-113992084-1');
     gtag('config', 'AW-807805114');
+
+    function conversion() {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-807805114/fHaeCJmQ8IABELrBmIED',
+            'transaction_id': ''
+        });
+        console.log('converse');
+    }
 </script>
 
 <script type="text/javascript" language="JavaScript">
