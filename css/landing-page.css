@@ -1405,17 +1405,25 @@ Responsive
     font-size: .7rem;
 }
 
+.partners-inline .img-fluid {
+    height: 60px;
+    margin-top: 14px;
+}
 .partners .img-fluid {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
+    margin: 10px 3% 0;
+}
+
+.partners .img-fluid, .partners-inline .img-fluid {
+    -webkit-filter: grayscale(40%);
+    -moz-filter: grayscale(40%);
+    -ms-filter: grayscale(40%);
+    -o-filter: grayscale(40%);
+    filter: grayscale(40%);
     filter: gray; /* IE 6-9 */
     transition: all 114ms ease-out;
 }
 
-.partners .img-fluid:hover {
+.partners .img-fluid:hover, .partners-inline .img-fluid:hover {
     -webkit-filter: grayscale(0%);
     -moz-filter: grayscale(0%);
     -ms-filter: grayscale(0%);
